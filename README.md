@@ -2,7 +2,7 @@
 
 ## React 16 / Symfony 4 Quizz project
 
-This project has been made by 4 peoples. I just deployed it on my own github account and writed this special doc.
+This project has been made by 4 peoples. I just deployed it on my own github account and wrote this special doc.
 
 My main responsability was to create the database and all server requests to fetch and update quizz and 
 player's informations. I had to setup the authentification system too.
@@ -31,8 +31,8 @@ Hopefully, we aren't that bad and we created 4 jokers to help you in your points
 - **"Skip"** : you can skip the question and earn points as if you answered right
 - **"Revival"**: if you are wrong, you revive and start again at the beginning of the step
 - **50/50** : only usable in the 2nd step, it deletes 2 bad answers
-- **Timer+** : it adds somes seconds to your timer
+- **Timer+** : it adds a few seconds to your timer
 
-So, I think you understood it : this game is a mix between quickness and strategy. 
+So I think you got it: this game is a mix between speed, risk taking and strategy
 
-For the moment, this project isn't online. Its main goal is to our skills in web developement.
+For the moment, the project isn't online. Its main goal is to show our skills in web developement.
