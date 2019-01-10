@@ -1,74 +1,38 @@
-# Projet Speedy Quiz
+# Speedy Quiz Project
 
-## Git Flow + manipulation de branche
+## React 16 / Symfony 4 Quizz project
 
-Créer une nouvelle feature:
+This project has been made by 4 peoples. I just deployed it on my own github account and writed this special doc.
 
-En premier lieu depuis la **develop**, on vérifie si il n'y a rien de nouveau.
+My main responsability was to create the database and all server requests to fetch and update quizz and 
+player's informations. I had to setup the authentification system too.
 
-```
-git pull
-```
+We used tokens for authentification and we also created an API REST manually for the communication between front and back.
 
-Puis on crée une nouvelle branche de feature
+We only had 1 month to make this project, including all the preparation and conception parts. 
 
-```
-git flow feature start nouvelleFeature
-```
+## The game
 
-Clôturer une feature:
+You have 15 questions for each theme. You chose your difficulty : simple, normal or hard. Depending on what you choose, you will have more or less time to answer all the questions. 
 
-Avant de clôturer une branche de feature, on vérifie (comme à sa création) si il n'y a rien de nouveau sur la **develop**. Donc on bascule sur la **develop** et on pull pour mettre à jour notre **develop** par rapport à celle du repo github.
+The harder it is, the more points you win for each question.
 
-```
-git checkout develop
-git pull
-```
+One bad answer and you lose ALL your points ! If you don't have time anymore, the quizz stop and you also lose ALL your points ! 
 
-A ce stade là si git vous annonce que votre repo est à jour et qu'il n'y a rien de nouveau, vous pouvez directement fermé votre feature. Dans le cas contraire lisez la suite (vous pouvez quand même la lire sans ça !).
-Ensuite on rebascule sur notre feature et on merge la **develop** dedans.
+**At any time, you can press the "STOP" button to save ALL your points and stop the quizz**. 
 
-```
-git checkout featureOnAFaitLeTour
-git merge develop
-```
+The quizz is divided in 3 steps :
+- **First step** : you choose the correct answer between 2 proposals, easy !
+- **Second step** : you choose the correct answer between 4 proposals, less easy !
+- **Third step** : you write the answer on your own ! not easy at all !
 
-Il se peut (si votre binome a été plus rapide que vous) que vous rencontriez des conflits à ce moment là, c'est maintenant que votre IDE est votre ami :)
-Une fois vos conflits résolus vous pouvez clôturer votre branche ! Encore une fois n'oubliez pas de prévenir votre binôme que vous allez le faire, on sait jamais il a peut-être, encore une fois (il vous en veut ^^), été plus rapide que vous !
+Hopefully, we aren't that bad and we created 4 jokers to help you in your points quest :
 
-```
-git flow feature finish featureOnAFaitLeTour
-```
+- **"Skip"** : you can skip the question and earn points as if you answered right
+- **"Revival"**: if you are wrong, you revive and start again at the beginning of the step
+- **50/50** : only usable in the 2nd step, it deletes 2 bad answers
+- **Timer+** : it adds somes seconds to your timer
 
-Et en dernier lieu pour éviter les frayeurs, on pousse sur github depuis la **develop** (normalement git flow nous remet dessus après la fermeture de la feature)
+So, I think you understood it : this game is a mix between quickness and strategy. 
 
-```
-git push
-```
-
-## Installer le serveur en local
-
-**Etape 1** : Télécharger le repo et se rendre dans le sous-dossier "backoffice".
-
-**Etape 2** : Installer composer si ce n'est pas déjà fait en tapant ce qui suit :
-
-```
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === '93b54496392c062774670ac18b134c3b3a95e5a5e5c8f1a9f115f203b75bf9a129d5daa8ba6a13e2cc8a1da0806388a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-```
-
-**Etape 3** : Faire un `composer install` pour installer les vendors propres à Symfo pour notre projet
-
-**Etape 4** : Se rendre dans le fichier nommé .env, et à l'intérieur, rentrer les données de la connexion au serveur au niveau de la ligne "DATABASE_URL". Par défaut, l'utilisateur est "root" et il n'y a pas de mot de passe. Donner ensuite le nom que vous voulez à la base de données que vous aurez en local. Vous pouvez copier coller cette ligne par exemple : `DATABASE_URL=mysql://root:''@127.0.0.1:3306/speedyquizz`
-
-**Etape 5** : Avec le terminal, rentrer la commande `php bin/console doctrine:database:create` pour créer de manière effective la base de donnée.
-
-**Etape 6** : Avec le terminal, rentrer la commande `php bin/console doctrine:migrations:migrate`. Si ça ne marche pas, essayez d'abord de taper `php bin/console make:migration` puis retapez la 1ere commande. Tout ça permet de créer les bonnes tables qu'on a déjà configuré de notre côté.
-
-**Etape 7** : Avec le terminal, rentrer la commande `php bin/console doctrine:fixtures:load` pour générer de fausses données.
-
-**Etape 8** : Puis `php bin/console server:run` pour lancer le serveur.
-
-Toutes les fausses données n'ont pas pu être crées à cause des relations entre les entités, du coup il faut en rentrer manuellement quelques unes, rien de méchant on pourra se check ça en vocal vous devriez avoir besoin de le faire juste 1 seule fois.
+For the moment, this project isn't online. Its main goal is to our skills in web developement.
