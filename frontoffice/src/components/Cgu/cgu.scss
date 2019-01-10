@@ -1,0 +1,44 @@
+@import '../../styles/colors';
+@import '../../styles/functions';
+@import '../../styles/mediaqueries';
+
+.cgu {
+  display: flex;
+  flex: 1;
+
+  &__main {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: rem(50);
+  }
+
+  &__title {
+    margin: rem(50) 0;
+    font-size: rem(45);
+    text-align: center;
+    color: $yellowText;
+  }
+
+  &__content {
+    padding: rem(5) rem(30) rem(30);
+    font-size: rem(20);
+    line-height: 1.3;
+    width: 90%;
+    background-color: $bgButton;
+    color: $purpleText;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 0 rgba($purpleText, 1);
+
+    @media #{$xxlarge} {
+      width: 75%;
+    }
+
+    h3 {
+      padding: rem(25);
+    }
+  }
+}

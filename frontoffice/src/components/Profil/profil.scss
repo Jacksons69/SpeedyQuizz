@@ -1,0 +1,144 @@
+@import '../../styles/colors';
+@import '../../styles/functions';
+@import '../../styles/mediaqueries';
+
+.profil {
+  display: flex;
+  flex: 1;
+  color: $yellowText;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    padding: rem(20) rem(15);
+    line-height: 1.3;
+    width: 90%;
+    background-color: $bgButton;
+    color: $purpleText;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 0 rgba($purpleText, 1);
+
+    @media #{$xxlarge} {
+      padding: rem(30);
+      width: 75%;
+    }
+  }
+
+  &__title {
+    margin: rem(50) 0;
+    font-size: rem(45);
+    text-align: center;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    font-size: rem(22);
+  }
+
+  .hr {
+    display: inline-block;
+    border-bottom: 1px solid $purpleText;
+    width: calc(100% - 210px);
+    margin: 0 0 5px 20px;
+  }
+
+  &__subtitle,
+  &__question {
+    margin-bottom: rem(15);
+  }
+
+  &__left {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 50%;
+    padding: 0 rem(20);
+    ul {
+      width: 100%;
+    }
+
+    @media #{$large} {
+      width: 40%;
+    }
+  }
+
+  &__right {
+    width: 50%;
+    padding: 0 rem(20);
+    border-left: 1px solid $purpleText;
+
+    @media #{$large} {
+      width: 60%;
+    }
+  }
+
+  &__item {
+    display: flex;
+    border-bottom: 1px solid $purpleText;
+    flex-direction: column;
+    margin-bottom: rem(20);
+
+    @media #{$large} {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__label,
+  &__question {
+    font-size: rem(17);
+  }
+
+  &__question:last-child {
+    margin-bottom: rem(25);
+  }
+
+  &__text,
+  &__description {
+    padding: rem(5) 0 rem(5);
+    font-size: rem(22);
+
+    @media #{$large} {
+      padding: rem(5) 0 rem(16);
+    }
+  }
+
+  &__description {
+    line-height: 1.1;
+    max-height: 300px;
+    overflow-y: auto;
+
+    @media #{$height768} {
+      max-height: 150px;
+    }
+
+    @media #{$height650} {
+      max-height: 100px;
+    }
+  }
+
+  &__modify {
+    display: flex;
+    margin-top: rem(5);
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+
+    .profil__text {
+      padding: 0;
+    }
+
+    svg {
+      margin-right: rem(10);
+      width: rem(20);
+      height: rem(20);
+      fill: $purpleText;
+    }
+  }
+}
