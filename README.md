@@ -30,8 +30,8 @@ Hopefully, we aren't that bad and we created 4 jokers to help you in your points
 
 - **"Skip"** : you can skip the question and earn points as if you answered right
 - **"Revival"**: if you are wrong, you revive and start again at the beginning of the step
-- **50/50** : only usable in the 2nd step, it deletes 2 bad answers
-- **Timer+** : it adds a few seconds to your timer
+- **"50/50"** : only usable in the 2nd step, it deletes 2 bad answers
+- **"Timer+"** : it adds a few seconds to your timer
 
 So I think you got it: this game is a mix between speed, risk taking and strategy
 
